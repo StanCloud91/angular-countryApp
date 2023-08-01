@@ -5,7 +5,7 @@ import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.
 import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.component';
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
 
-const routes: Routes=[
+const routes: Routes = [
   {
     path: 'by-capital',
     component: ByCapitalPageComponent
@@ -21,6 +21,10 @@ const routes: Routes=[
   {
     path: 'by/:id',
     component: CountryPageComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'by-capital'
   }
 ]
 
@@ -29,7 +33,7 @@ const routes: Routes=[
   imports: [
     RouterModule.forChild(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })
